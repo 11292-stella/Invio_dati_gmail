@@ -33,6 +33,6 @@ build/
 .vscode/
 
 # Configurazioni sensibili
-src/main/resources/application.env
+src/main/resources/env.properties
 
 

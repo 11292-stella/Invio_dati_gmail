@@ -14,6 +14,7 @@ public class BlogPost {
     private String cover;
     private String contenuto;
     private int tempoDiLettura;
+    private String urlImmagine;
 
     @ManyToOne
     @JoinColumn(name = "autore_id")

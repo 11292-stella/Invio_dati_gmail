@@ -13,6 +13,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 
 @RestController
 public class AutoreController {
@@ -58,5 +61,10 @@ public class AutoreController {
     @DeleteMapping("/autori/{id}")
     public void deleteAutore(@PathVariable int id) throws NonTrovatoException {
         autoreService.deleteAutore(id);
+    }
+
+    @PatchMapping("/autori/{id}")
+    public Autore patchAutore(@PathVariable int id, @RequestParam("file") MultipartFile file) throws NonTrovatoException, IOException {
+        return autoreService.patchAutore(id, file);
     }
 }

@@ -43,6 +43,8 @@ public class BlogPostService {
         blogPost.setTitolo(blogPostDto.getTitolo());
         blogPost.setTempoDiLettura(blogPostDto.getTempoDiLettura());
         blogPost.setAutore(autore);
+        sendMail("stella.marucelli@gmail.com");
+
 
 
         return blogPostRepository.save(blogPost);
